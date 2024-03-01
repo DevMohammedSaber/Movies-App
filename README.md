@@ -9,7 +9,7 @@ The app provides information such as movie details, ratings and reviews.
 
 ## Screenshots
 
-
+| Home Screen && Details Screen |
 | --------------------------------- |
 | ![Screenshot1](https://i.ibb.co/9ZrcfPs/playstore-asset.png) |
 

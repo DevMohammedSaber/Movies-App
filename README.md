@@ -8,8 +8,8 @@ This repository contains the source code for the Flutter Movies App, which allow
 The app provides information such as movie details, ratings and reviews.
 
 ## Screenshots
-| Home_Screen 1 | Details_Screen 2 | Sub_Category_Screen 3 |
-| :----: | :----: | :----:|
+| Home_Screen | Details_Screen | Sub_Category_Screen |
+| :----: | :----: | :----: |
 | ![Home](https://i.ibb.co/Jz89jpC/appstore-asset-3.png) | ![Details](https://i.ibb.co/cC1BD0m/appstore-asset-4.png) | ![Sub_Category](https://i.ibb.co/TB9vC3J/appstore-asset-5.png) |
 
 

@@ -52,4 +52,4 @@ The TMDA Flutter app is built using the TMDB API, which power the whole app's fe
 If you have any questions, suggestions, or feedback, please contact the project maintainer:
 
 Email: dev.mohammedsaber@gmail.com\
-GitHub: [Bit-Camp-IO](https://github.com/DevMohammedSaber)
+GitHub: [DevMohammedSaber](https://github.com/DevMohammedSaber)

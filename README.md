@@ -12,12 +12,11 @@ The app provides information such as movie details, ratings and reviews.
 
 ## 🚀: Features
 
-- Search for movies or tv show by title, genre, or keywords
-- View movie or tv show details including cast, release date, and average rating
-- Read reviews for movies or tv show
-- Watch movie or tv show trailers
-- Add movies or tv shows to your watchlist for quick access
-- Explore popular movies and tv shows and upcoming releases
+- Display Splash screen
+- Display a list of movies
+- Display a movie details page that can be opened from a movie item or adeep link
+- Add Push Notification feature using Firebase Cloud notification
+
 
 ## Prerequisites
 

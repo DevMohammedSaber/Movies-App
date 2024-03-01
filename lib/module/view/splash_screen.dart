@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movies_app/routes.dart';
 import 'package:movies_app/service/deep_links.dart';
-import 'package:movies_app/utils/helpers/helper_functions.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,8 +19,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = ZHelperFunctions.isDarkMode(context);
-
     return Scaffold(
       body: Center(
         child: Image.asset(

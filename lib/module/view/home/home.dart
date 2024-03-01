@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:movies_app/module/controller/deep_links.dart';
 import 'package:movies_app/utils/constants/constants.dart';
-import 'package:movies_app/module/controller/home_controler.dart';
+import 'package:movies_app/module/view/home/controller/home_controler.dart';
 import 'package:movies_app/module/view/home/widgets/custom_popular_movies_slider.dart';
 import 'package:movies_app/module/view/home/widgets/cutom_title_category.dart';
 import 'package:movies_app/module/view/home/widgets/custom_list_view_builder.dart';
@@ -14,6 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(HomeControllerImpl());
+    Get.put(DeepLinksService());
 
     return Scaffold(
       appBar: AppBar(

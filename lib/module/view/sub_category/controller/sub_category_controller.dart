@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movies_app/module/model/movie_model.dart';
-import 'package:http/http.dart' as http;
+import 'package:movies_app/utils/helpers/api_client.dart';
+import 'package:movies_app/utils/helpers/app_logger.dart';
 
 abstract class SubCategoryController extends GetxController {
   final controller = ScrollController();
@@ -44,16 +45,18 @@ class SubCategoryControllerImpl extends SubCategoryController {
 
   @override
   Future<List<MovieModel>> fetchMovies(String urlLink) async {
-    final response = await http.get(Uri.parse('$urlLink&page=$page'));
-    if (response.statusCode == 200) {
+    try {
+      final response = await ApiClient.instance.get('$urlLink&page=$page');
+
       final decodedData = json.decode(response.body)['results'] as List;
       final data =
           decodedData.map((movie) => MovieModel.fromJson(movie)).toList();
       movieslist.addAll(data);
 
       return data;
-    } else {
-      throw Exception('Something went wrong. please try again');
+    } catch (e) {
+      AppLogger().error('Something went wrong. please try again: $e');
+      return [];
     }
   }
 }

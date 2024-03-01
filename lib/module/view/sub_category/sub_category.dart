@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:movies_app/module/controller/sub_category_controller.dart';
+import 'package:movies_app/module/view/sub_category/controller/sub_category_controller.dart';
 import 'package:movies_app/module/view/details/details_screen.dart';
 import 'package:movies_app/module/view/home/widgets/custom_item_details.dart';
 import 'package:movies_app/utils/constants/constants.dart';
@@ -54,9 +54,9 @@ class SubCategoryScreen extends StatelessWidget {
                   if (index < controller.movieslist.length) {
                     return InkWell(
                       onTap: () {
-                        Get.to(() => const DetailsScreen(), arguments: {
-                          'id': controller.movieslist[index].id.toString()
-                        });
+                        Get.to(() => const DetailsScreen(),
+                            arguments:
+                                controller.movieslist[index].id.toString());
                       },
                       child: Container(
                         decoration: BoxDecoration(

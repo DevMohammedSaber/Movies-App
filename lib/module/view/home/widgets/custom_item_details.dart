@@ -43,13 +43,13 @@ class CustomItemDetails extends StatelessWidget {
           ),
         ),
         Positioned(
-          bottom: 10,
-          right: 10,
+          bottom: 10.h,
+          right: 10.w,
           child: Container(
-            padding: const EdgeInsets.all(3),
+            padding: EdgeInsets.all(3.r),
             decoration: BoxDecoration(
               color: ZColors.darkGrey.withOpacity(.7),
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
             ),
             child: Text(
               model.releaseDate!.substring(0, model.releaseDate!.indexOf('-')),

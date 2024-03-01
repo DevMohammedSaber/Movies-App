@@ -14,8 +14,7 @@ class CustomListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(() => const DetailsScreen(),
-            arguments: {'id': model.id.toString()});
+        Get.to(() => const DetailsScreen(), arguments: model.id.toString());
       },
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.w),

@@ -22,7 +22,17 @@ class MovieModel {
     this.voteAverage,
     this.genres,
   });
-
+  static MovieModel empety() => MovieModel(
+        backdropPath: '',
+        id: 0,
+        originalTitle: '',
+        overview: '',
+        posterPath: '',
+        releaseDate: '',
+        title: '',
+        voteAverage: 0.0,
+        genres: [],
+      );
   factory MovieModel.fromJson(Map<String, dynamic> json) => MovieModel(
         backdropPath: json['backdrop_path'] ?? '',
         id: json['id'] ?? 0,

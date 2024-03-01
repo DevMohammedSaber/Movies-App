@@ -8,7 +8,7 @@ import 'package:movies_app/module/model/movie_model.dart';
 import 'package:movies_app/module/view/home/widgets/custom_item_details.dart';
 import 'package:movies_app/common/shimmers/shimmer_effect.dart';
 import 'package:movies_app/module/view/details/details_screen.dart';
-import 'package:movies_app/module/controller/home_controler.dart';
+import 'package:movies_app/module/view/home/controller/home_controler.dart';
 import 'package:movies_app/utils/constants/colors.dart';
 import 'package:movies_app/utils/constants/constants.dart';
 
@@ -50,9 +50,10 @@ class CustomPopularMoviesSlider extends StatelessWidget {
                       ? const ZShimmerEffict(width: 500, height: 400)
                       : InkWell(
                           onTap: () {
-                            Get.to(() => const DetailsScreen(), arguments: {
-                              'id': moviesList[index].id.toString(),
-                            });
+                            Get.to(
+                              () => const DetailsScreen(),
+                              arguments: moviesList[index].id.toString(),
+                            );
                           },
                           child: Container(
                             alignment: Alignment.bottomCenter,

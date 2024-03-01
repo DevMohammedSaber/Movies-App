@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:movies_app/module/controller/details_controller.dart';
+import 'package:movies_app/module/view/details/controller/details_controller.dart';
 import 'package:movies_app/module/model/movie_model.dart';
 import 'package:movies_app/module/view/details/widgets/custom_back_button.dart';
 import 'package:movies_app/module/view/details/widgets/custom_container_details.dart';
@@ -21,7 +21,8 @@ class DetailsScreen extends StatelessWidget {
     final dark = ZHelperFunctions.isDarkMode(context);
     final controller = Get.put(DetailsScreenControllerImpl());
 
-    final id = Get.arguments['id'] as String;
+    final id = Get.arguments as String;
+
     MovieModel? model;
     return Scaffold(
       body: FutureBuilder(
@@ -30,24 +31,27 @@ class DetailsScreen extends StatelessWidget {
           if (snapshot.hasData) {
             model = snapshot.data as MovieModel;
           } else if (snapshot.hasError) {
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Data not found!',
-                    style: Theme.of(context).textTheme.headlineMedium),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: ZColors.primary,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 40.w, vertical: 10.h),
-                  ),
-                  child: Text(
-                    'Back to Home',
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'This Movie Does Not Exist!',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
-                ),
-              ],
+                  SizedBox(height: 30.h),
+                  ElevatedButton(
+                    onPressed: () => Get.back(),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: ZColors.primary,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 70.w, vertical: 20.h),
+                    ),
+                    child: Text('Back to Home',
+                        style: Theme.of(context).textTheme.bodyLarge),
+                  ),
+                ],
+              ),
             );
           }
           return CustomScrollView(

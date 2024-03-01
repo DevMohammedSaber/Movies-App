@@ -22,7 +22,8 @@ The app provides information such as movie details, ratings and reviews.
 - Display a movie details page that can be opened from a movie item or adeep link
 - Add Push Notification feature using Firebase Cloud notification
 - Light and Dark Theme
-- 
+- Singleton design pattern | AppLogger and AppClient
+  
 
 ## 🔌 Plugins
 
@@ -33,6 +34,7 @@ The app provides information such as movie details, ratings and reviews.
 | [**shimmer**](https://pub.dev/packages/shimmer)                            | Loading effect                                |
 | [**http**](https://pub.dev/packages/http)                                  | Network calls and File Download               |
 | [**firebase_messaging**](https://pub.dev/packages/firebase_messaging)      | Push notifications                            |
+| [**Logger**](https://pub.dev/packages/logger)                              | Handling errors                               |
 
 
 ## License

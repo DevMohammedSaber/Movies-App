@@ -8,14 +8,20 @@ This repository contains the source code for the Flutter Movies App, which allow
 The app provides information such as movie details, ratings and reviews.
 
 
-![eFashion in app preview](https://i.imgur.com/9OeuI5B.png)
+![eFashion in app preview](https://i.ibb.co/RvwKdjr/appstore-asset.png)
+![eFashion in app preview](https://i.ibb.co/Jz89jpC/appstore-asset-3.png)
+![eFashion in app preview](https://i.ibb.co/cC1BD0m/appstore-asset-4.png)
+![eFashion in app preview](https://i.ibb.co/TB9vC3J/appstore-asset-5.png)
 
 ## 🚀: Features
 
 - Display Splash screen
-- Display a list of movies
+- Display a popular, top rated and upcoming list of movies
+- Display a sub category with infinty scroll
 - Display a movie details page that can be opened from a movie item or adeep link
 - Add Push Notification feature using Firebase Cloud notification
+- Light and Dark Theme
+- 
 
 
 ## Prerequisites

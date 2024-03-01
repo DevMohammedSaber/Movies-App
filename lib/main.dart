@@ -24,62 +24,8 @@ Future<void> main() async {
   );
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  @override
-  MyAppState createState() => MyAppState();
-}
-
-class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
-  // StreamSubscription? _sub;
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _handleIncomingLinks();
-  //   _handleInitialUri();
-  // }
-
-  // @override
-  // void dispose() {
-  //   _sub?.cancel();
-  //   super.dispose();
-  // }
-
-  // void _handleIncomingLinks() {
-  //   if (!kIsWeb) {
-  //     _sub = uriLinkStream.listen((Uri? uri) {
-  //       if (!mounted) return;
-  //       print('got uri: $uri');
-  //       if (uri!.path.isNotEmpty) {
-  //         Get.toNamed(Routes.detailsScreen, arguments: {'id': uri.path});
-  //       } else {
-  //         Get.offNamed(Routes.homeScreen);
-  //       }
-  //     }, onError: (Object err) {
-  //       if (!mounted) return;
-  //       print('got err: $err');
-  //     });
-  //   }
-  // }
-
-  // Future<void> _handleInitialUri() async {
-  //   if (!_initialUriIsHandled) {
-  //     _initialUriIsHandled = true;
-  //     try {
-  //       final uri = await getInitialUri();
-
-  //       print('got initial uri: $uri');
-  //       if (!mounted) return;
-  //     } on PlatformException {
-  //       print('falied to get initial uri');
-  //     } on FormatException catch (err) {
-  //       if (!mounted) return;
-  //       print('malformed initial uri $err');
-  //     }
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {

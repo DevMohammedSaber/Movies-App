@@ -1,29 +1,49 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/module/view/home/home.dart';
-import 'package:movies_app/utils/constants/colors.dart';
+import 'package:get/get.dart';
+import 'package:movies_app/routes.dart';
+import 'package:movies_app/service/deep_links.dart';
 import 'package:movies_app/utils/helpers/helper_functions.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    screenRedirection();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     final isDark = ZHelperFunctions.isDarkMode(context);
+
     return Scaffold(
       body: Center(
-        child: AnimatedSplashScreen(
-          duration: 1500,
-          splash: Image.asset(
-            'assets/images/logo.png',
-            filterQuality: FilterQuality.high,
-          ),
-          nextScreen: const HomeScreen(),
-          splashTransition: SplashTransition.slideTransition,
-          animationDuration: const Duration(seconds: 2),
-          backgroundColor: isDark ? ZColors.dark : ZColors.light,
+        child: Image.asset(
+          'assets/images/logo.png',
+          width: 150,
+          filterQuality: FilterQuality.high,
         ),
       ),
     );
   }
+}
+
+screenRedirection() async {
+  Future.delayed(const Duration(seconds: 2), () {
+    if (DeepLinksService.instance.haveUri) {
+      Get.offNamed(Routes.homeScreen);
+      Get.toNamed(
+        Routes.detailsScreen,
+        arguments: {'id': DeepLinksService.instance.currentUri!.path},
+      );
+    } else {
+      Get.offNamed(Routes.homeScreen);
+    }
+  });
 }
